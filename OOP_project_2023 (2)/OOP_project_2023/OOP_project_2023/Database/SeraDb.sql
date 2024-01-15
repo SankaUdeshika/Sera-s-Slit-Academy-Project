@@ -50,9 +50,7 @@ CREATE TABLE IF NOT EXISTS `inventorytbl` (
   `Quantity` int DEFAULT NULL,
   `Price` double DEFAULT NULL,
   `Supplier_ID` int DEFAULT NULL,
-  PRIMARY KEY (`Product_ID`),
-  KEY `FK_inventorytbl_suppliertbl` (`Supplier_ID`),
-  CONSTRAINT `FK_inventorytbl_suppliertbl` FOREIGN KEY (`Supplier_ID`) REFERENCES `suppliertbl` (`Supplier_ID`)
+  PRIMARY KEY (`Product_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table digitalapp.inventorytbl: ~0 rows (approximately)
