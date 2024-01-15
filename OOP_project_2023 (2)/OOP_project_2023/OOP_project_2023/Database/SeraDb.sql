@@ -49,10 +49,10 @@ CREATE TABLE IF NOT EXISTS `inventorytbl` (
   `Product_Name` varchar(45) DEFAULT NULL,
   `Quantity` int DEFAULT NULL,
   `Price` double DEFAULT NULL,
-  `suppliertbl_Supplier_ID` int NOT NULL,
+  `Supplier_ID` int DEFAULT NULL,
   PRIMARY KEY (`Product_ID`),
-  KEY `fk_inventorytbl_suppliertbl_idx` (`suppliertbl_Supplier_ID`),
-  CONSTRAINT `fk_inventorytbl_suppliertbl` FOREIGN KEY (`suppliertbl_Supplier_ID`) REFERENCES `suppliertbl` (`Supplier_ID`)
+  KEY `FK_inventorytbl_suppliertbl` (`Supplier_ID`),
+  CONSTRAINT `FK_inventorytbl_suppliertbl` FOREIGN KEY (`Supplier_ID`) REFERENCES `suppliertbl` (`Supplier_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table digitalapp.inventorytbl: ~0 rows (approximately)
@@ -77,9 +77,7 @@ CREATE TABLE IF NOT EXISTS `usertbl` (
   PRIMARY KEY (`UID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table digitalapp.usertbl: ~1 rows (approximately)
-INSERT INTO `usertbl` (`UID`, `Username`, `Password`) VALUES
-	(1, 'sanka', '12345');
+-- Dumping data for table digitalapp.usertbl: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
